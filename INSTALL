@@ -1,0 +1,5 @@
+You'll need CMake on your system in order to build the ARSE 0.2. CMake can be downloaded here http://www.cmake.org/HTML/Download.html
+
+In order to build, run the following command :
+
+cmake . && make && make install

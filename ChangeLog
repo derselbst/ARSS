@@ -1,0 +1,74 @@
+0.2.3 :
+- Fixed the logarithmic base system so that it produces the expect results
+when using a different base than 2
+- Implemented linear frequency scaling
+- Fixed the volume of noise bands in noise synthesis, although it may not be
+perfect and may be way off for logarithmical bases other than 2 and linear
+scaling
+- Implemented bounds checking when reading and writing in the lower and upper frequencies
+- Fixed the brightness setting input which would only take integer values
+- Added a bit more information on the progress display line
+
+0.2.2 :
+- Replaced frequency domain windowing by a logarithmic symmetric antiderivative
+of the Blackman function by a logarithmic Hann function. Reduces the visible
+time domain ripples (which can mainly be seen on the lower part of
+spectrograms)
+
+0.2.1 :
+- Fixed a bug in the BMP input function that would shear some images
+
+0.2 :
+- Modified the I/O interface
+- Added big endian support to the I/O functions
+- Code clean-up of the I/O functions
+- Fixed a bug in the BMP input that would cause offsets with certain BMP files
+- Entirely re-organised the code in a more modular way in order to ease the
+use of the code as a library and to ease up the implementation of new file
+format support and eventual GUIs
+- Changed the time measuring function so that results are consistent on all
+platforms
+- Implemented fast noise synthesis based on a bank of short filtered noise
+loops modulated with envelopes interpolated using a new technique I named
+Blackman square interpolation (look-up table based)
+- Implemented a large number of command-line parameters to allow for
+scripting, front-ends and doing things that couldn't be done before
+(such as specifying the desired dimensions of a spectrogram)
+- Automatic selection of the Analysis mode if the input file ends with .wav
+- Implemented brightness correction
+
+Known bugs :
+- Drag and drop on Windows changes the current working directory to
+C:\windows\system32, so if you use drag and drop you need to type the full
+path for the output file or find it in system32. A work-around would be to
+make a simple batch script along the lines of : '"C:\dir\arss.exe" %1'.
+
+0.2 Development Release 2 :
+- Fixed the 16-bit WAVE output bug
+- Blackman filtering and interpolation for downsizing spectrogram lines
+
+0.2 Development Release 1 :
+- Fast frequency domain full logarithmic scale filtering
+- Fast FFT-based envelope detection 
+- Faster analysis (about 100x faster)
+- Nearest neighbour downsampling for downsizing spectrogram lines (will be 
+changed for the final 0.2 release)
+- Faster FFT-based sine synthesis method
+- Noise synthesis disabled (will be re-implemented for the final 0.2 release)
+- Revision of the user interface
+
+0.1 Release :
+- Replaced fixed phase sine generation with random phase sine generation
+- Changed the PRNG
+- Removed the unused code
+- Removed every call of nearbyint() due to compatibility issues
+- Split the project into several files and moved the Makefile creation to CMake
+
+070428 Release :
+- Image output changed from 16-bit raw to BMP (as it should have been in the 
+first place)
+- Compiled with Mingw instead of Cygwin so compatibility should be improved
+- Fixed minor naming mistakes
+
+070325 Release :
+- Initial release
