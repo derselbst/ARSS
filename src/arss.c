@@ -29,8 +29,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 #include "sound_io.h"
 #include "dsp.h"
 
-char *version = "0.2.3";
-char *date = "May 29th, 2008";
+const char version[] = "0.2.3";
+const char date[] = "May 29th, 2008";
 
 #define MSG_NUMBER_EXPECTED "A number is expected after %s\nExiting with error.\n"
 
@@ -306,7 +306,7 @@ void print_adv_help()
 		"--linear, -l               Linear frequency scale. Same as --log-base 1\n"
 		"--loop-size [real]         Noise look-up table size in seconds (default: 10)\n"
 		"--bmsq-lut-size [integer]  Blackman Square kernel LUT size (default: 16000)\n"
-		"--pi [real]                pi (default: 3.1415926535897932)\n"
+		"--pi [real]                pi (default: %.*f)\n", DBL_DIG, PI_D
 	      );
 }
 
