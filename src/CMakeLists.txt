@@ -4,7 +4,7 @@ project (arss C)
 add_executable (arss arss.c dsp.c util.c image_io.c sound_io.c)
 
 
-SET (CMAKE_BUILD_TYPE Release)
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -Wextra")
 
 # look for the FFTW library
 FIND_PATH (FFTW3_INCLUDE_DIR fftw3.h PATHS /usr/local/include /usr/include /sw/include)
