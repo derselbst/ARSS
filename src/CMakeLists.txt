@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+
 project (arss C)
 add_executable (arss arss.c dsp.c util.c image_io.c sound_io.c)
 
@@ -25,7 +27,7 @@ IF (HAVE_FFTW3)
 	IF (NOT FFTW3_FIND_QUIETLY)
 		MESSAGE (STATUS "Found components for FFTW3")
 		MESSAGE (STATUS "FFTW3_INCLUDE_DIR = ${FFTW3_INCLUDE_DIR}")
-		MESSAGE (STATUS "FFTW3_LIBRARY		 = ${FFTW3_LIBRARY}")
+		MESSAGE (STATUS "FFTW3_LIBRARY     = ${FFTW3_LIBRARY}")
 	ENDIF (NOT FFTW3_FIND_QUIETLY)
 ELSE (HAVE_FFTW3)
 	IF (FFTW3_FIND_REQUIRED)
