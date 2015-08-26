@@ -87,9 +87,9 @@ void settingsinput(int32_t *bands, int32_t samplecount, int32_t *samplerate, dou
 	if (unset==4)				// if too many settings are set
 	{
 		if (mode==0)
-			fprintf(stderr, "You have set one parameter too much.\nUnset either --min-freq (-min), --max-freq (-max), --bpo (-b)\nExiting with error.\n");
+			fprintf(stderr, "You have set one parameter too many.\nUnset either --min-freq (-min), --max-freq (-max), --bpo (-b)\nExiting with error.\n");
 		if (mode==1)
-			fprintf(stderr, "You have set one parameter too much.\nUnset either --min-freq (-min), --max-freq (-max), --bpo (-b) or --height (-y)\nExiting with error.\n");
+			fprintf(stderr, "You have set one parameter too many.\nUnset either --min-freq (-min), --max-freq (-max), --bpo (-b) or --height (-y)\nExiting with error.\n");
 		exit(EXIT_FAILURE);
 	}
 
